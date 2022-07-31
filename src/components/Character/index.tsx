@@ -21,10 +21,10 @@ export const Character: React.FC<CharacterProps> = ({ id, name, status, image })
   return (
     <div className={styles.root}>
       <Card>
-        <CardMedia component="img" height="140" image={image} alt={name} />
+        <CardMedia component="img" height="200" image={image} alt={name} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {name}
+            {name.length > 20 ? name.substring(0, 20) + '...' : name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
             Status: {status}

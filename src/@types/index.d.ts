@@ -1,11 +1,19 @@
 export declare global {
   declare module '*.scss';
-  interface Origin {
-    name: string;
-    url: string;
-  }
 
-  interface Location {
+  type MetaDetails = {
+    count: number;
+    next: string;
+    pages: number;
+    prev: null | number;
+  };
+
+  type ResponseDetails<T = unknown> = {
+    info: MetaDetails;
+    results: T;
+  };
+
+  interface Origin {
     name: string;
     url: string;
   }
@@ -18,9 +26,19 @@ export declare global {
     type: string;
     gender: string;
     origin: Origin;
-    location: Location;
+    location: CharacterLocation;
     image: string;
     episode: any[];
+    url: string;
+    created: Date;
+  }
+
+  interface CharacterLocation {
+    id: number;
+    name: string;
+    type: string;
+    dimension: string;
+    residents: string[];
     url: string;
     created: Date;
   }

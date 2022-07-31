@@ -1,26 +1,13 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { API_URL } from '../../constants';
 
-type MetaDetails = {
-  count: number;
-  next: string;
-  pages: number;
-  prev: null | number;
-};
-
-type AllCharactersResponse = {
-  info: MetaDetails;
-  results: Character[];
-};
-
 export const charactersApi = createApi({
   reducerPath: 'chractersApi',
   baseQuery: fetchBaseQuery({ baseUrl: API_URL }),
   endpoints: (builder) => ({
     getAllCharacters: builder.query<Character[], void>({
       query: () => '/character',
-      transformResponse(data: AllCharactersResponse) {
-        console.log(data, 9999);
+      transformResponse(data: ResponseDetails<Character[]>) {
         return data.results;
       },
     }),
