@@ -8,6 +8,7 @@ import SearchIcon from '@mui/icons-material/Search';
 
 import styles from './Header.module.scss';
 import { styled, alpha } from '@mui/material/styles';
+import { Link } from 'react-router-dom';
 
 export const Header: React.FC = () => {
   const Search = styled('div')(({ theme }) => ({
@@ -57,13 +58,15 @@ export const Header: React.FC = () => {
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static">
           <Toolbar>
-            <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
-              Rick and Morty
-            </Typography>
+            <Link className={styles.link} to="/">
+              <Typography
+                variant="h6"
+                noWrap
+                component="div"
+                sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
+                Rick and Morty
+              </Typography>
+            </Link>
             <Search>
               <SearchIconWrapper>
                 <SearchIcon />
