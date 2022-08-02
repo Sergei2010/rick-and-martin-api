@@ -2,8 +2,8 @@
   font-family: 'Nunito', system-ui !important;
 }
 
-.home-container {
-  margin-top: 20px;
+.container {
+  margin-top: 30px;
 }
 
 .characters-grid {
@@ -20,4 +20,8 @@
   @media (max-width: 680px) {
     grid-template-columns: repeat(1, 1fr);
   }
+}
+
+.pagination {
+  margin-bottom: 40px;
 }

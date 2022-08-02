@@ -1,19 +1,19 @@
 import React from 'react';
 
-import { Header } from './components/Header';
+import { Header } from './components';
 import { Container } from '@mui/system';
 import { Route, Routes } from 'react-router-dom';
-import { HomePage } from './pages/Home';
-import { CharacterDetailsPage } from './pages/CharacterDetails';
+import { HomePage, CharacterDetailsPage } from './pages';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Container className="home-container">
+      <Container className="container">
         <Routes>
           <Route path="" element={<HomePage />} />
           <Route path="/character/:id" element={<CharacterDetailsPage />} />
+          <Route path="*" element={<h1>Page not found</h1>} />
         </Routes>
       </Container>
     </div>

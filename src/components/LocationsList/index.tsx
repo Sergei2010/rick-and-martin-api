@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Skeleton, Typography } from '@mui/material';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -7,7 +8,7 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 
-import { useGetLocationByIdQuery } from '../../store/apis/locations';
+import { useGetLocationByIdQuery } from 'store/apis/locations';
 
 interface LocationsListProps {
   ids: number | number[];
