@@ -1,8 +1,8 @@
 import { CircularProgress, Typography } from '@mui/material';
 import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
-import { LocationsList } from '../../components/LocationsList';
-import { useGetCharacterByIdQuery } from '../../store/apis/characters';
+import { LocationsList } from 'components/LocationsList';
+import { useGetCharacterByIdQuery } from 'store/apis/characters';
 
 import styles from './CharacterDetails.module.scss';
 
