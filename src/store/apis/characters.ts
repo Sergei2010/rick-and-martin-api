@@ -6,6 +6,7 @@ import { RootState } from '../store';
 export const charactersApi = createApi({
   reducerPath: 'chractersApi',
   baseQuery: fetchBaseQuery({ baseUrl: API_URL }),
+
   endpoints: (builder) => ({
     getAllCharacters: builder.query<ResponseDetails<Character[]>, void>({
       queryFn: async (arg, queryApi, extraOptions, baseQuery) => {
@@ -14,14 +15,14 @@ export const charactersApi = createApi({
 
         const response = (await baseQuery(`/character?name=${searchValue}&page=${page}`)) as any;
 
-        if (response.data.info.totalCount !== totalCount) {
-          queryApi.dispatch(setTotalCount(response.data.info.totalCount));
+        if (response.data && response.data.info.count !== totalCount) {
+          queryApi.dispatch(setTotalCount(response.data.info.count));
           queryApi.dispatch(setPage(1));
         }
-
         return response;
       },
     }),
+
     getCharacterById: builder.query<Character, number>({
       query: (id) => `/character/${id}`,
     }),

@@ -1,13 +1,11 @@
-import React from 'react';
-
-import { Header } from './components';
+import { Header } from 'components';
 import { Container } from '@mui/system';
 import { Route, Routes } from 'react-router-dom';
 import { HomePage, CharacterDetailsPage } from './pages';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Header />
       <Container className="container">
         <Routes>

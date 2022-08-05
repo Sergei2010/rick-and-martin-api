@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { useAppDispatch, useAppSelector } from 'store/store';
-import { selectSearchValue, setSearchValue } from 'store/slices/filter';
+import { selectSearchValue, setPage, setSearchValue } from 'store/slices/filter';
 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -61,12 +61,17 @@ export const Header: React.FC = () => {
   const searchValue = useAppSelector(selectSearchValue);
   const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) =>
     dispatch(setSearchValue(e.target.value));
+  const handleClick = () => {
+    dispatch(setSearchValue(''));
+    dispatch(setPage(1));
+  };
+
   return (
     <div className={styles.root}>
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static">
           <Toolbar>
-            <Link className={styles.link} to="/">
+            <Link className={styles.link} to="/" onClick={handleClick}>
               <Typography
                 variant="h6"
                 noWrap
