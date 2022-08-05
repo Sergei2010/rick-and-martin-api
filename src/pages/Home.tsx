@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { useGetAllCharactersQuery } from 'store/apis/characters';
 
 import { CircularProgress, Pagination, Typography } from '@mui/material';
@@ -32,16 +33,20 @@ export const HomePage: React.FC = () => {
 
   return (
     <>
-      <Pagination
-        classes={{ root: 'pagination' }}
-        count={data.info.pages}
-        defaultPage={filter.page}
-        page={filter.page}
-        onChange={handleChangePage}
-        variant="outlined"
-        color="primary"
-        size="large"
-      />
+      {data.info.pages > 1 ? (
+        <Pagination
+          classes={{ root: 'pagination' }}
+          count={data.info.pages}
+          page={filter.page}
+          defaultPage={filter.page}
+          onChange={handleChangePage}
+          variant="outlined"
+          color="primary"
+          size="large"
+        />
+      ) : (
+        <div className="characters-zero"></div>
+      )}
       <div className="characters-grid">
         {data.results.map((obj) => (
           <Character
