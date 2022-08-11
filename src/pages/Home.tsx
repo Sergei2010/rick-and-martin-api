@@ -33,6 +33,8 @@ export const HomePage: React.FC = () => {
 
   return (
     <>
+      {/* {console.log('filter--inHomePage:', filter)}
+      {console.log('data--inHomePage:', data)} */}
       {data.info.pages > 1 ? (
         <Pagination
           classes={{ root: 'pagination' }}

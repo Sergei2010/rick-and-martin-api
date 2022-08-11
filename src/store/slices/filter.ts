@@ -7,23 +7,23 @@ const initialState = {
   totalCount: 0,
 };
 
-const filterSlice = createSlice({
+const filterSlice = createSlice( {
   name: 'filter',
   initialState,
   reducers: {
-    setPage: (state, action: PayloadAction<number>) => {
+    setPage: ( state, action: PayloadAction<number> ) => {
       state.page = action.payload;
     },
-    setTotalCount: (state, action: PayloadAction<number>) => {
+    setTotalCount: ( state, action: PayloadAction<number> ) => {
       state.totalCount = action.payload;
     },
-    setSearchValue: (state, action: PayloadAction<string>) => {
+    setSearchValue: ( state, action: PayloadAction<string> ) => {
       state.searchValue = action.payload;
     },
   },
-});
+} );
 
-export const selectSearchValue = (state: RootState) => state.filter.searchValue;
+export const selectSearchValue = ( state: RootState ) => state.filter.searchValue;
 
 export const { setPage, setSearchValue, setTotalCount } = filterSlice.actions;
 export const filterReducer = filterSlice.reducer;
