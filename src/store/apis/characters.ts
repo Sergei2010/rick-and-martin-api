@@ -14,6 +14,7 @@ export const charactersApi = createApi( {
         const { searchValue, page, totalCount } = ( state as RootState ).filter;
         const response = ( await baseQuery( `/character?name=${ searchValue }&page=${ page }` ) ) as any;
 
+        //console.log( 'response:', response );
         if ( response.data && response.data.info.count !== totalCount ) {
           queryApi.dispatch( setTotalCount( response.data.info.count ) );
           queryApi.dispatch( setPage( 1 ) );
