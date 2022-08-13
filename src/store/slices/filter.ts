@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../store';
 
 const initialState = {
-  page: 0,
+  page: 1,
   searchValue: '',
   totalCount: 0,
 };
