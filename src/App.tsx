@@ -9,7 +9,7 @@ function App() {
       <Header />
       <Container className="container">
         <Routes>
-          <Route path="" element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/character/:id" element={<CharacterDetailsPage />} />
           <Route path="*" element={<h1>Page not found</h1>} />
         </Routes>
