@@ -13,7 +13,7 @@ export const HomePage: React.FC = () => {
 
   const { data, error, isFetching, refetch } = useGetAllCharactersQuery();
 
-  console.log(data, error, isFetching, refetch);
+  //console.log(data, error, isFetching, refetch);
 
   React.useEffect(refetch, [filter, refetch]);
 
@@ -35,8 +35,8 @@ export const HomePage: React.FC = () => {
 
   return (
     <>
-      {console.log('filter--inHomePage:', filter)}
-      {console.log('data--inHomePage:', data)}
+      {/* {console.log('filter--inHomePage:', filter)}
+      {console.log('data--inHomePage:', data)} */}
       {data.info.pages > 1 ? (
         <Pagination
           classes={{ root: 'pagination' }}
