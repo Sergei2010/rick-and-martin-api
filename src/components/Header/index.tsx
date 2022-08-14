@@ -58,9 +58,14 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export const Header: React.FC = () => {
   const dispatch = useAppDispatch();
+
   const searchValue = useAppSelector(selectSearchValue);
-  const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) =>
+
+  const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(setSearchValue(e.target.value));
+    dispatch(setPage(1));
+  };
+
   const handleClick = () => {
     dispatch(setSearchValue(''));
     dispatch(setPage(1));
@@ -97,3 +102,6 @@ export const Header: React.FC = () => {
     </div>
   );
 };
+/* function selectPage(selectPage: any) {
+  throw new Error('Function not implemented.');
+} */
